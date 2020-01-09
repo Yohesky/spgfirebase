@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <img src="{{producto.urlPhoto}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              <p class="card-text">{{producto.descripcion}}</p>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-md-4 card ">
+        <ul class="list-group card-body mt-5">
+            <li class="list-group-item"> <p>Ingresado por:</p> {{producto.by}} </li>
+            <li class="list-group-item"> <p>Fecha de Ingreso:</p>{{producto.fechaIngreso}} </li>
+            <li class="list-group-item"> <p>Codigo del Producto</p>{{producto.codigo}} </li>
+          </ul>
+    </div>
+</div>

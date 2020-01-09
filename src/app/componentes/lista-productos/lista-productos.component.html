@@ -1,0 +1,59 @@
+<section class="row mt-5 animated bounceInLeft">
+    <div class="col">
+        <button class="btn btn-primary float-right mt-5 mb-3" data-toggle="modal" data-target="#modalProducto">  
+            Agregar un Nuevo Libro
+        </button>
+        
+            
+               <div class=""  id="form">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                
+                            <th scope="col">Existencia</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Fecha de Ingreso</th>
+                            <th scope="col">Ingresado Por:</th>
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">&nbsp;</th>
+                        </tr>
+                        
+                    </thead>
+                    
+                    <tbody  *ngFor="let producto of productos | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
+                        <tr>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{producto.nombre}}</td>
+                         
+                            <td>{{producto.existencia}}</td>
+                            <td>{{producto.precio}}</td>
+                            <td>{{producto.fechaIngreso}}</td>
+                            <td>{{producto.by}}</td>
+                            
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" (click)="preActualizacion(producto)" data-target="#modalProducto">Actualizar</button>
+                            </td>
+    
+                            <td>
+                                <button class="btn btn-danger" (click)='eliminarProducto(producto.id)'>Eliminar</button>
+                            </td>
+    
+                            <td>
+                                <button class="btn btn-success" routerLink='/producto/{{producto.id}}' >Ver Producto</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-info" (click)="imprimir()">Imprimir</button>
+               </div>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            
+    
+    </div>
+</section>
+
+<app-modal></app-modal> 
+
