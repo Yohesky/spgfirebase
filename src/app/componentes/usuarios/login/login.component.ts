@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../servicios/auth.service'
+import * as $ from "jquery"
 
 //routes
 import {Router} from '@angular/router'
@@ -41,4 +42,6 @@ export class LoginComponent implements OnInit {
   messageError(err): void{
      this.msgError = err.message
   }
+
+  
 }

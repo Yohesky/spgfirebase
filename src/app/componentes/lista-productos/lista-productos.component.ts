@@ -65,7 +65,7 @@ export class ListaProductosComponent implements OnInit {
 
   imprimir(){
     
-    printJS({printable: this.productos, properties: ['id', 'nombre', 'existencia', 'fechaIngreso', 'descripcion', 'precio', 'codigo', 'by'], type: 'json'})
+    printJS({printable: this.productos, properties: ['nombre', 'existencia', 'fechaIngreso', 'descripcion', 'precio', 'codigo', 'by'], type: 'json'})
   }
   
 
